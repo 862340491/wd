@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人网页</title>
+    <title>张三的个人网页</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @keyframes gradientAnimation {
@@ -21,6 +21,7 @@
             animation: gradientAnimation 15s ease infinite;
             color: #333;
             display: flex;
+            flex-direction: column;
         }
         #sidebar {
             width: 250px;
@@ -30,7 +31,9 @@
             height: 100vh;
             position: fixed;
             left: -250px; /* Hide sidebar by default */
+            top: 0;
             transition: left 0.3s;
+            z-index: 1000;
         }
         #sidebar img {
             width: 100px;
@@ -74,6 +77,7 @@
             margin-left: 0;
             flex-grow: 1;
             transition: margin-left 0.3s;
+            position: relative;
         }
         header {
             color: white;
@@ -124,7 +128,6 @@
             color: white;
             margin: 0 15px;
             font-size: 1.8em;
-
             transition: color 0.3s;
         }
         .social-icons a:hover {
@@ -157,6 +160,19 @@
         form input[type="submit"]:hover {
             background-color: #0056b3;
         }
+
+        /* Media Queries */
+        @media (min-width: 768px) {
+            body {
+                flex-direction: row;
+            }
+            #sidebar {
+                left: 0;
+            }
+            main {
+                margin-left: 250px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -174,7 +190,7 @@
 
     <main>
         <header>
-            <h1>任威威大sb</h1>
+            <h1>个人网页</h1>
         </header>
 
         <section id="about">
@@ -233,12 +249,14 @@
 
     <script>
         document.addEventListener('mousemove', function(e) {
-            if (e.clientX < 200) { // If mouse is within 200px of the left edge
+            if (e.clientX < 50) { // If mouse is within 50px of the left edge
                 document.getElementById('sidebar').style.left = '0';
-                document.querySelector('main').style.marginLeft = '250px';
-            } else {
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!document.getElementById('sidebar').contains(e.target)) {
                 document.getElementById('sidebar').style.left = '-250px';
-                document.querySelector('main').style.marginLeft = '0';
             }
         });
     </script>
