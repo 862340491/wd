@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张三的个人网页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background: linear-gradient(-45deg, #007BFF, #00C9FF, #92FE9D, #00C9FF);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #333;
+            display: flex;
+        }
+        #sidebar {
+            width: 250px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+            position: fixed;
+            left: -250px; /* Hide sidebar by default */
+            transition: left 0.3s;
+        }
+        #sidebar img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 20px;
+            border: 3px solid #007BFF;
+        }
+        #sidebar p {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+        #sidebar h2 {
+            font-size: 1.5em;
+            color: #007BFF;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        #sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        #sidebar ul li {
+            margin-bottom: 15px;
+        }
+        #sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        #sidebar ul li a:hover {
+            color: #007BFF;
+        }
+        main {
+            margin-left: 0;
+            flex-grow: 1;
+            transition: margin-left 0.3s;
+        }
+        header {
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 2em;
+        }
+        nav {
+            display: none; /* Hide the original nav as we have the sidebar now */
+        }
+        section {
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        section:hover {
+            transform: translateY(-5px);
+        }
+        section h2 {
+            color: #007BFF;
+            border-bottom: 3px solid #007BFF;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+        }
+        section p, section ul {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: rgba(51, 51, 51, 0.8);
+            color: white;
+            font-size: 0.9em;
+            backdrop-filter: blur(10px);
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .social-icons a {
+            color: white;
+            margin: 0 15px;
+            font-size: 1.8em;
+
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #007BFF;
+        }
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <img src="./微信图片_20231003145754.jpg" alt="张三的头像">
+        <p>等雨落</p>
+        <h2>导航</h2>
+        <ul>
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#skills">技能</a></li>
+            <li><a href="#contact">联系我</a></li>
+            <li><a href="#software">实用软件</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <header>
+            <h1>个人网页</h1>
+        </header>
+
+        <section id="about">
+            <h2>关于我</h2>
+            <p>你好，我是一个全栈开发者，拥有多年的前端和后端开发经验。我喜欢挑战新技术，并致力于提供高质量的解决方案。</p>
+        </section>
+
+        <section id="skills">
+            <h2>技能</h2>
+            <ul>
+                <li>HTML/CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>数据库管理</li>
+            </ul>
+        </section>
+
+        <section id="software">
+            <h2>实用软件</h2>
+            <ul>
+                <li><a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a> - 一个轻量级但功能强大的源代码编辑器，支持多种编程语言。</li>
+                <li><a href="https://desktop.github.com" target="_blank">GitHub Desktop</a> - 一个图形界面的GitHub客户端，方便您在本地进行版本控制。</li>
+                <li><a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a> - 一个快速、安全且易于使用的网络浏览器。</li>
+                <li><a href="https://www.sublimetext.com" target="_blank">Sublime Text</a> - 一个高级的文本编辑器，具有丰富的功能和插件支持。</li>
+                <li><a href="https://nodejs.org" target="_blank">Node.js</a> - 一个基于Chrome V8引擎的JavaScript运行时环境，用于构建快速、可扩展的网络应用。</li>
+                <li><a href="https://chat.openai.com" target="_blank">ChatGPT</a> - 一个由OpenAI开发的自然语言处理模型，可以与用户进行自然语言对话。</li> <!-- Add this line -->
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>联系我</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">姓名:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">邮箱:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">留言:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <input type="submit" value="发送">
+            </form>
+            <div class="social-icons">
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </section>
+
+        <footer>
+            <p>版权所有 &copy; 2024 张三</p>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            if (e.clientX < 200) { // If mouse is within 200px of the left edge
+                document.getElementById('sidebar').style.left = '0';
+                document.querySelector('main').style.marginLeft = '250px';
+            } else {
+                document.getElementById('sidebar').style.left = '-250px';
+                document.querySelector('main').style.marginLeft = '0';
+            }
+        });
+    </script>
+</body>
+</html>

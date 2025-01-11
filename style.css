@@ -1,0 +1,81 @@
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+.site-header a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.video-section {
+    position: relative;
+}
+
+.video-section video {
+    width: 100%;
+    height: auto;
+}
+
+.video-section .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+.product-showcase, .craftsmanship, .contact-form {
+    padding: 50px 0;
+}
+
+.product-grid, .craft-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product-card, .craft-card {
+    text-align: center;
+}
+
+.contact-form form {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form-left, .form-right {
+    flex: 1;
+}
+
+.form-left input, .form-right textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
